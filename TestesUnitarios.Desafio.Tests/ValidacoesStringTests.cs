@@ -9,17 +9,15 @@ public class ValidacoesStringTests
     [Fact]
     public void DeveRetornar6QuantidadeCaracteresDaPalavraMatrix()
     {
-        //TODO: Corrigir a variável "texto" e "resultadoEsperado" da seção Arrange
-
         // Arrange
-        var texto = "a";
-        var resultadoEsperado = 0;
+        var texto = "Matrix";  // Corrigido de "a" para "Matrix"
+        var resultadoEsperado = 6;  // Corrigido para 6, que é a quantidade de caracteres da palavra "Matrix"
 
         // Act
         var resultado = _validacoes.RetornarQuantidadeCaracteres(texto);
 
         // Assert
-        Assert.Equal(resultadoEsperado, resultado);
+        Assert.Equal(resultadoEsperado, resultado);  // Verifica se o número de caracteres é igual a 6
     }
 
     [Fact]
@@ -29,13 +27,11 @@ public class ValidacoesStringTests
         var texto = "Esse é um texto qualquer";
         var textoProcurado = "qualquer";
 
-        //TODO: Corrigir a chamada do método "ContemCaractere" da seção Act
         // Act
-         _validacoes.ContemCaractere(texto, textoProcurado);
+        var resultado = _validacoes.ContemCaractere(texto, textoProcurado);  // Corrigido a chamada do método
 
         // Assert
-        //TODO: Corrigir o Assert.True com base no retorno da chamada ao método
-        Assert.True(true);
+        Assert.True(resultado);  // Verifica se o método retornou verdadeiro, pois a palavra "qualquer" está presente
     }
 
     [Fact]
@@ -49,23 +45,20 @@ public class ValidacoesStringTests
         var resultado = _validacoes.ContemCaractere(texto, textoProcurado);
 
         // Assert
-        //TODO: Corrigir o Assert.False com base no retorno da chamada ao método
-        Assert.False(true);
+        Assert.False(resultado);  // Verifica se o método retornou falso, pois a palavra "teste" não está presente
     }
 
-    //TODO: Corrigir a anotação [Fact]
+    [Fact]
     public void TextoDeveTerminarComAPalavraProcurado()
     {
-        //TODO: Corrigir a variável "textoProcurado" seção Arrange
-
         // Arrange
-        var texto = "Começo, meio e fim do texto procurado";
-        var textoProcurado = "teste";
+        var texto = "Começo, meio e fim do texto procurado";  // O texto completo
+        var textoProcurado = "procurado";  // Corrigido para "procurado", que está no final do texto
 
         // Act
         var resultado = _validacoes.TextoTerminaCom(texto, textoProcurado);
 
         // Assert
-        Assert.True(resultado);
+        Assert.True(resultado);  // Verifica se o texto termina com a palavra "procurado"
     }
 }
